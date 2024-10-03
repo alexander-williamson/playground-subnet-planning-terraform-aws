@@ -15,13 +15,13 @@ Since we need an AZ per subnet (10) plus local zones (14) which is 24 for both p
 For 48+ subnets we'll need to divide /16 into something with enough space, so we can use /22 which when using the largest space has 64 spaces.
 
 ```terraform
-cidrsubnet("10.1.0.0/24", 6, 0) # 10.1.0.0/24
-cidrsubnet("10.1.0.0/24", 6, 0) # 10.1.4.0/24
-cidrsubnet("10.1.0.0/24", 6, 0) # 10.1.8.0/24
+cidrsubnet("10.0.0.0/24", 6, 0) # 10.0.0.0/24
+cidrsubnet("10.0.0.0/24", 6, 0) # 10.0.4.0/24
+cidrsubnet("10.0.0.0/24", 6, 0) # 10.0.8.0/24
 ...
-cidrsubnet("10.1.0.0/24", 6, 32) # 10.1.128.0/24
-cidrsubnet("10.1.0.0/24", 6, 33) # 10.1.132.0/24
-cidrsubnet("10.1.0.0/24", 6, 34) # 10.1.136.0/24
+cidrsubnet("10.0.0.0/24", 6, 32) # 10.0.128.0/24
+cidrsubnet("10.0.0.0/24", 6, 33) # 10.0.132.0/24
+cidrsubnet("10.0.0.0/24", 6, 34) # 10.0.136.0/24
 ```
 
 A great tool to verify this is [Visual Subnet Calculator](https://visualsubnetcalc.com) where you can interactively work out your subnets using the buttons on the right to divide or join the subnets.
